@@ -1,0 +1,59 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(
+    -70deg,
+    #a5cc82,
+    #00467f
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchForm {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputField {
+  width: 60%;
+  max-width: 700px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.searchButton {
+  border: none;
+  padding: 10px 20px;
+  margin-left: 3px;
+  cursor: pointer;
+  background-color: rgb(235, 70, 42);
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  width: 11ch;
+}
+
+.searchButton:hover {
+  background-color: rgb(246, 195, 68);
+  color: black;
+}
+
+.allRecipes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer {
+  background-color: black;
+  color: lightgray;
+  text-align: center;
+  padding: 5px;
+}

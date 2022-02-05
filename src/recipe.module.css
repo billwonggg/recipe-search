@@ -1,0 +1,30 @@
+.recipe {
+  border-radius: 25px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  width: 90vw;
+  max-width: 750px;
+  padding: 0% 3% 3%;
+  cursor: default;
+  transition: 0.6s;
+}
+
+.recipe:hover {
+  transition: transform 0.6s;
+  transform: scale(1.04);
+}
+
+img {
+  height: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+}
