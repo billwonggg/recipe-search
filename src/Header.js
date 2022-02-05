@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./header.module.css";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const Header = () => {
   return (
@@ -14,7 +15,13 @@ const Header = () => {
         <br />
         <br />
         <strong>*Note*</strong> The API allows a maximum of 10 searches every
-        minute.
+        minute.&nbsp;&nbsp;
+        <PulseLoader
+          color={"#444"}
+          loading={true}
+          size={8}
+          speedMultiplier={0.8}
+        />
       </p>
     </div>
   );
