@@ -1,8 +1,10 @@
 # Recipe Search API with React.js - [Link here](https://recipesearch-api.web.app)
 
-### The goal of this project is to practice React.js and asynchronous API fetching after learning the theory.
+### The goal of this project is to practice React.js and asynchronous API fetching after learning the theory. <br>
 
 #### The API of this website is from edamam.com, which includes over 2.3 million recipes across the world.
+
+<br>
 
 #### I was able to solidify my understanding with:
 
@@ -12,17 +14,23 @@
 > - React props and components
 > - CSS modules
 
+<br>
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Available Scripts
+<br>
 
-In the project directory, you can run:
+## Available Scripts
 
-### `npm start`
+### In the project directory, you can run:
 
-### `npm test`
+#### `npm start`
 
-### `npm run build`
+#### `npm test`
+
+#### `npm run build`
+
+<br>
 
 ## Learn More
 
