@@ -4,6 +4,7 @@ import ScrollBar from "./ScrollBar";
 import Header from "./Header";
 import Recipe from "./Recipe";
 import Footer from "./Footer";
+import ScrollUp from "./ScrollUp";
 import HashLoader from "react-spinners/HashLoader";
 
 const App = () => {
@@ -65,6 +66,7 @@ const App = () => {
       ) : (
         <>
           <ScrollBar />
+          <ScrollUp showBelow={250} />
           <div className="title">
             <Header />
           </div>
