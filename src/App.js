@@ -17,7 +17,6 @@ const App = () => {
   // technically should use env variables
   const APP_ID = "1c61eb1d";
   const APP_KEY = "3c4a2ff2fd50960b26e3a958a5f3234d";
-  let endpoint = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
   // Effects
   useEffect(() => {
@@ -27,23 +26,25 @@ const App = () => {
     }, 4500);
   }, []);
 
+  // every time the query (when user submits) changes, we call API
   useEffect(() => {
+    // make the API call asynchronously
+    const recipeAPI = async () => {
+      try {
+        const response = await fetch(
+          `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data.hits);
+          setRecipes(data.hits);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
     recipeAPI();
   }, [query]);
-
-  // make the API call asynchronously
-  const recipeAPI = async () => {
-    try {
-      const response = await fetch(endpoint);
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data.hits);
-        setRecipes(data.hits);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   // every time the user types in the search box, we update the search box state
   const updateSearch = (e) => {
