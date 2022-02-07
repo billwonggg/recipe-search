@@ -5,7 +5,7 @@ import PulseLoader from "react-spinners/PulseLoader";
 const Header = () => {
   return (
     <div className={style.header}>
-      <h1>Recipe Search API with React.js</h1>
+      <h1>Recipe Search with React.js</h1>
       <p>
         This Edamam Recipe Search API has over 2.3 million recipes across the
         world. <br />
@@ -17,10 +17,10 @@ const Header = () => {
         <strong>*Note*</strong> The API allows a maximum of 10 searches every
         minute.&nbsp;&nbsp;
         <PulseLoader
-          color={"#444"}
+          color={"#FFF"}
           loading={true}
           size={8}
-          speedMultiplier={0.8}
+          speedMultiplier={0.7}
         />
       </p>
     </div>
