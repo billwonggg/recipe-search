@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgb(220,220,220,0.7)",
     },
     [theme.breakpoints.up("lg")]: {
-      right: "2.5%",
+      right: "2%",
     },
   },
 }));
@@ -28,24 +28,24 @@ const useStyles = makeStyles((theme) => ({
 const ScrollUp = ({ showBelow }) => {
   const classes = useStyles();
 
-  const [show, setShow] = useState(showBelow ? false : true);
+  const [show, setShow] = useState(false);
 
   const handleScroll = () => {
     if (window.pageYOffset > showBelow) {
-      if (!show) setShow(true);
+      setShow(true);
     } else {
-      if (show) setShow(false);
+      setShow(false);
     }
   };
 
   const handleClick = () => {
-    window[`scrollTo`]({ top: 0, behavior: `smooth` });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
     if (showBelow) {
-      window.addEventListener(`scroll`, handleScroll);
-      return () => window.removeEventListener(`scroll`, handleScroll);
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
     }
   });
 
