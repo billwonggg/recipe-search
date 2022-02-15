@@ -1,4 +1,4 @@
-# Recipe Search API with React.js - [Link here](https://recipesearch-api.web.app)
+# **Recipe Search API with React.js** - [_Link here_](https://recipesearch-api.web.app)
 
 ### The goal of this project is to practice React.js and asynchronous API fetching after learning the theory. <br>
 
@@ -6,30 +6,25 @@
 
 <br>
 
-#### I was able to solidify my understanding with:
-
+> ### I was able to solidify my understanding with:
+>
 > - React.js Hooks (State/Effect)
 > - Asynchronous API calls (async/await)
 > - JSX (JavaScript XML)
 > - React props and components
-> - CSS modules
+> - CSS and Material UI modules
 
 <br>
 
-## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Desktop Preview:
 
-### In the project directory, you can run:
+![Demo](./images/demo.gif)
 
-#### `npm start`
+### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#### `npm test`
-
-#### `npm run build`
-
-<br>
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+> ### In the project directory, you can run:
+>
+> - #### `npm install`
+> - #### `npm start`
+> - #### `npm test`
+> - #### `npm run build`
