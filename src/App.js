@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import ScrollBar from "./ScrollBar";
-import Header from "./Header";
-import Recipe from "./Recipe";
-import Footer from "./Footer";
-import ScrollUp from "./ScrollUp";
+import ScrollBar from "./components/ScrollBar";
+import Header from "./components/Header";
+import Recipe from "./components/Recipe";
+import Footer from "./components/Footer";
+import ScrollUp from "./components/ScrollUp";
 import HashLoader from "react-spinners/HashLoader";
 
 const App = () => {
