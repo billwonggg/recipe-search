@@ -18,7 +18,11 @@
 
 ### Desktop Preview:
 
-![Demo](./images/demo.gif)
+![Demo](./images/desktop_preview.png)
+
+### Mobile Preview:
+
+<img src="./images/mobile_preview.png" width="250">
 
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
