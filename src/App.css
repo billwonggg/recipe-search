@@ -22,21 +22,6 @@
   align-items: center;
 }
 
-.searchForm {
-  min-height: 11vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.inputField {
-  width: 60%;
-  max-width: 700px;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-}
-
 .searchButton {
   border: none;
   padding: 10px 20px;

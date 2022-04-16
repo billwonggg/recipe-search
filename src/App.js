@@ -36,7 +36,6 @@ const App = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log(data.hits);
           setRecipes(data.hits);
         }
       } catch (error) {
@@ -46,14 +45,8 @@ const App = () => {
     recipeAPI();
   }, [query]);
 
-  // every time the user types in the search box, we update the search box state
-  const updateSearch = (e) => {
-    setSearch(e.target.value);
-  };
-
   // when user presses the submit button, set the query state and clear search box
   const getSearch = (e) => {
-    e.preventDefault();
     setQuery(search);
     setSearch("");
   };
@@ -69,20 +62,12 @@ const App = () => {
           <ScrollBar />
           <ScrollUp showBelow={250} />
           <div className="title">
-            <Header />
+            <Header
+              search={search}
+              getSearch={getSearch}
+              setSearch={setSearch}
+            />
           </div>
-          <form className="searchForm" onSubmit={getSearch}>
-            <input
-              className="inputField"
-              type="text"
-              value={search}
-              placeholder="Enter your favourite dish"
-              onChange={updateSearch}
-            ></input>
-            <button className="searchButton" type="submit">
-              Search
-            </button>
-          </form>
           <div className="allRecipes">
             {recipes.map((r, i) => (
               <Recipe
