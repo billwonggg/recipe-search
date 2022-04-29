@@ -8,11 +8,11 @@ const Header = ({ search, getSearch, setSearch }) => {
     <div className={style.header}>
       <h1>Recipe Search</h1>
       <p>
-        This Edamam Recipe Search API has over 2.3 million recipes across the
-        world. <br />
+        This website's data is sourced from the Edamam Recipe Search API, which
+        has over 2.3 million recipes across the world. <br />
         <br />
-        Search up <strong>ANY</strong> kind of food (e.g. pizza, croissant,
-        ramen...) to see it in action. &nbsp;
+        Search up ANY kind of food (e.g. miso ramen, croissant, brownie) to see
+        it in action. &nbsp;
         <PulseLoader
           color={"#00539c"}
           loading={true}
