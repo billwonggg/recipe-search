@@ -9,7 +9,7 @@
   width: 90vw;
   max-width: 700px;
   padding: 0% 3% 3%;
-  cursor: default;
+  cursor: pointer;
   transition: transform 0.6s;
 }
 

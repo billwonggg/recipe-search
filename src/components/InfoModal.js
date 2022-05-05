@@ -7,10 +7,11 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: "400px",
+    maxWidth: "90%",
     bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
+    border: "5px solid #000",
+    boxShadow: 15,
     p: 4,
   };
 
@@ -18,11 +19,14 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
     setModalRecipe(null);
   };
 
+  if (!modalRecipe) return null;
+  const calories = modalRecipe.recipe.calories;
+
   return (
     <Modal
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"
-      open={modalRecipe == null ? false : true}
+      open={true}
       onClose={handleClose}
       closeAfterTransition
       BackdropComponent={Backdrop}
@@ -30,13 +34,13 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
         timeout: 500,
       }}
     >
-      <Fade in={modalRecipe == null ? false : true}>
+      <Fade in={true}>
         <Box sx={style}>
           <Typography id="transition-modal-title" variant="h6" component="h2">
-            Text in a modal
+            More Information
           </Typography>
           <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            Calories: {Math.ceil(calories)}
           </Typography>
         </Box>
       </Fade>

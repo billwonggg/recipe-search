@@ -53,41 +53,35 @@ const App = () => {
     setSearch("");
   };
   console.log(modalRecipe);
+
+  // loading page
+  if (loading) {
+    return (
+      <div className="loadingBG">
+        <HashLoader color={"#C03C75"} loading={loading} size={75} />
+      </div>
+    );
+  }
   return (
     <div className="App">
-      {loading ? (
-        <div className="loadingBG">
-          <HashLoader color={"#C03C75"} loading={loading} size={75} />
-        </div>
-      ) : (
-        <>
-          <ScrollBar />
-          <ScrollUp showBelow={250} />
-          <div className="title">
-            <Header
-              search={search}
-              getSearch={getSearch}
-              setSearch={setSearch}
-            />
-          </div>
-          <div className="allRecipes">
-            {recipes.map((r, i) => (
-              <Recipe
-                key={"recipe" + i}
-                recipe={r}
-                setModalRecipe={setModalRecipe}
-              />
-            ))}
-          </div>
-          <InfoModal
-            modalRecipe={modalRecipe}
+      <ScrollBar />
+      <ScrollUp showBelow={250} />
+      <div className="title">
+        <Header search={search} getSearch={getSearch} setSearch={setSearch} />
+      </div>
+      <div className="allRecipes">
+        {recipes.map((r, i) => (
+          <Recipe
+            key={"recipe" + i}
+            recipe={r}
             setModalRecipe={setModalRecipe}
           />
-          <div className="footer">
-            <Footer />
-          </div>
-        </>
-      )}
+        ))}
+      </div>
+      <InfoModal modalRecipe={modalRecipe} setModalRecipe={setModalRecipe} />
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 };
