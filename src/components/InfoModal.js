@@ -41,7 +41,7 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
     "K",
   ];
   const nutrition = elements.map((e) => {
-    return modalRecipe.totalNutrients.e;
+    return modalRecipe.totalNutrients[e];
   });
   console.log(nutrition);
   return (
@@ -74,22 +74,22 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
           </Typography>
           <TableContainer component={Paper}>
             <Table
-              sx={{ minWidth: 650 }}
+              sx={{ minWidth: 500 }}
               size="small"
               aria-label="a dense table"
             >
               <TableHead>
                 <TableRow>
-                  <TableCell>Nuitrition</TableCell>
-                  <TableCell>Quantity</TableCell>
+                  <TableCell></TableCell>
+                  <TableCell align="right">Avg. Quantity per 100g</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {nutrition.map((n) => (
-                  <TableRow key={n.label}>
+                  <TableRow key={n.label} align="right">
                     <TableCell>{n.label}</TableCell>
-                    <TableCell>
-                      {n.quantity / scale} {n.unit}
+                    <TableCell align="right">
+                      {(n.quantity / scale).toFixed(2)} {n.unit}
                     </TableCell>
                   </TableRow>
                 ))}
