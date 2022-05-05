@@ -1,7 +1,13 @@
 import React from "react";
 import style from "./recipe.module.css";
 
-const Recipe = ({ title, calories, img, cuisine, ingredients }) => {
+const Recipe = ({ recipe, setModal }) => {
+  const title = recipe.recipe.label;
+  const calories = recipe.recipe.calories;
+  const img = recipe.recipe.image;
+  const ingredients = recipe.recipe.ingredients;
+  const cuisine = recipe.recipe.cuisineType;
+
   const ingredients_list = ingredients.map((ig) => ig.text);
   const unique_ingredients = [...new Set(ingredients_list)];
   return (
@@ -13,10 +19,10 @@ const Recipe = ({ title, calories, img, cuisine, ingredients }) => {
           <li key={title + "_ig" + i}>{ig}</li>
         ))}
       </ul>
-      <p key={title + "calories"}>
+      {/* <p key={title + "calories"}>
         Calories:
         <strong> {Math.ceil(calories)}</strong>
-      </p>
+      </p> */}
       <img key={title + "img"} src={img} alt="" />
     </div>
   );

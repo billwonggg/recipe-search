@@ -13,10 +13,11 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("creamy pasta");
+  const [modal, setModal] = useState(null);
 
-  // technically should use env variables
-  const APP_ID = "1c61eb1d";
-  const APP_KEY = "3c4a2ff2fd50960b26e3a958a5f3234d";
+  // use env variables for api keys
+  const APP_ID = process.env.REACT_APP_API_APP_ID;
+  const APP_KEY = process.env.REACT_APP_API_APP_KEY;
 
   // Effects
   useEffect(() => {
@@ -50,7 +51,7 @@ const App = () => {
     setQuery(search);
     setSearch("");
   };
-
+  console.log(recipes);
   return (
     <div className="App">
       {loading ? (
@@ -70,19 +71,12 @@ const App = () => {
           </div>
           <div className="allRecipes">
             {recipes.map((r, i) => (
-              <Recipe
-                key={"recipe" + i}
-                title={r.recipe.label}
-                calories={r.recipe.calories}
-                img={r.recipe.image}
-                cuisine={r.recipe.cuisineType}
-                ingredients={r.recipe.ingredients}
-              />
+              <Recipe key={"recipe" + i} recipe={r} setModal={setModal} />
             ))}
           </div>
           <div className="footer">
             <Footer />
-          </div>{" "}
+          </div>
         </>
       )}
     </div>
