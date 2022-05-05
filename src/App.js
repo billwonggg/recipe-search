@@ -6,6 +6,7 @@ import Recipe from "./components/Recipe";
 import Footer from "./components/Footer";
 import ScrollUp from "./components/ScrollUp";
 import HashLoader from "react-spinners/HashLoader";
+import InfoModal from "./components/InfoModal";
 
 const App = () => {
   // States
@@ -13,7 +14,7 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("creamy pasta");
-  const [modal, setModal] = useState(null);
+  const [modalRecipe, setModalRecipe] = useState(null);
 
   // use env variables for api keys
   const APP_ID = process.env.REACT_APP_API_APP_ID;
@@ -51,7 +52,7 @@ const App = () => {
     setQuery(search);
     setSearch("");
   };
-  console.log(recipes);
+  console.log(modalRecipe);
   return (
     <div className="App">
       {loading ? (
@@ -71,9 +72,17 @@ const App = () => {
           </div>
           <div className="allRecipes">
             {recipes.map((r, i) => (
-              <Recipe key={"recipe" + i} recipe={r} setModal={setModal} />
+              <Recipe
+                key={"recipe" + i}
+                recipe={r}
+                setModalRecipe={setModalRecipe}
+              />
             ))}
           </div>
+          <InfoModal
+            modalRecipe={modalRecipe}
+            setModalRecipe={setModalRecipe}
+          />
           <div className="footer">
             <Footer />
           </div>
