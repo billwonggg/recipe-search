@@ -73,7 +73,7 @@ const App = () => {
         {recipes.map((r, i) => (
           <Recipe
             key={"recipe" + i}
-            recipe={r}
+            recipe={r.recipe}
             setModalRecipe={setModalRecipe}
           />
         ))}

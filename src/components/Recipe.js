@@ -2,10 +2,10 @@ import React from "react";
 import style from "./recipe.module.css";
 
 const Recipe = ({ recipe, setModalRecipe }) => {
-  const title = recipe.recipe.label;
-  const img = recipe.recipe.image;
-  const ingredients = recipe.recipe.ingredients;
-  const cuisine = String(recipe.recipe.cuisineType);
+  const title = recipe.label;
+  const img = recipe.image;
+  const ingredients = recipe.ingredients;
+  const cuisine = String(recipe.cuisineType);
   const capatalisedCuisine = cuisine.charAt(0).toUpperCase() + cuisine.slice(1);
   const ingredients_list = ingredients.map((ig) => ig.text);
   const unique_ingredients = [...new Set(ingredients_list)];
