@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Recipe from "./components/Recipe";
 import Footer from "./components/Footer";
 import ScrollUp from "./components/ScrollUp";
-import HashLoader from "react-spinners/HashLoader";
+import GridLoader from "react-spinners/GridLoader";
 import InfoModal from "./components/InfoModal";
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 4500);
+    }, 5500);
   }, []);
 
   // every time the query (when user submits) changes, we call API
@@ -61,7 +61,7 @@ const App = () => {
   if (loading) {
     return (
       <div className="loadingBG">
-        <HashLoader color={"#C03C75"} loading={loading} size={75} />
+        <GridLoader color={"#C03C75"} loading={loading} size={20} />
       </div>
     );
   }

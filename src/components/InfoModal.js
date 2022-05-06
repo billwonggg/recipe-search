@@ -15,7 +15,7 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "500px",
-    maxHeight: "60%",
+    maxHeight: "70%",
     maxWidth: "90%",
     bgcolor: "background.paper",
     borderRadius: "20px",
@@ -28,6 +28,14 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
     setModalRecipe(null);
   };
 
+  const title = modalRecipe.label;
+  const img = modalRecipe.image;
+  const dishType = modalRecipe.dishType[0] ?? "Main course";
+  const capatalisedDish = dishType.charAt(0).toUpperCase() + dishType.slice(1);
+  const cuisine = String(modalRecipe.cuisineType);
+  const capatalisedCuisine = cuisine.charAt(0).toUpperCase() + cuisine.slice(1);
+  const ingredients_list = modalRecipe.ingredients.map((ig) => ig.text);
+  const unique_ingredients = [...new Set(ingredients_list)];
   const scale = modalRecipe.totalWeight / 100;
   const elements = [
     "ENERC_KCAL",
@@ -54,41 +62,69 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
       closeAfterTransition
       BackdropComponent={Backdrop}
       BackdropProps={{
-        timeout: 500,
+        timeout: 800,
       }}
     >
       <Fade in={true}>
         <Box sx={style}>
-          <Box sx={{ fontSize: 35 }}>More Information</Box>
-          <Box sx={{ fontSize: 18, mt: 2 }}>
-            Dish Type: {modalRecipe.dishType[0] ?? "Normal Dish"}
+          <Box sx={{ fontSize: 35, textAlign: "center" }}>
+            <strong>{title}</strong>
+          </Box>
+          <Box sx={{ mt: 2, textAlign: "center" }}>
+            <img src={img} alt="" />
           </Box>
 
+          <Box sx={{ fontSize: 18, mt: 2, textAlign: "center" }}>
+            {capatalisedCuisine} Cuisine
+          </Box>
+          <Box sx={{ fontSize: 18, mt: 2 }}>Dish Type: {capatalisedDish}</Box>
+
           <Box sx={{ fontSize: 18, mt: 2 }}>
-            Top 5 Health Labels:
+            Top Health Labels:
             <ol style={{ fontSize: 14 }}>
               {modalRecipe.healthLabels.slice(0, 5).map((label) => (
                 <li>{label}</li>
               ))}
             </ol>
           </Box>
+          <Box sx={{ fontSize: 18, mt: 2 }}>
+            Ingredients:
+            <ul key={title + "_ig"} style={{ fontSize: 14 }}>
+              {unique_ingredients.map((ig, i) => (
+                <li key={title + "_ig" + i}>{ig}</li>
+              ))}
+            </ul>
+          </Box>
           <Box sx={{ fontSize: 23, mt: 3 }}>
             Nuitrition Information
-            <TableContainer component={Paper}>
+            <TableContainer
+              component={Paper}
+              style={{ border: "2px solid black", marginTop: "3px" }}
+            >
               <Table
                 sx={{ minWidth: 500 }}
                 size="small"
                 aria-label="a dense table"
               >
                 <TableHead>
-                  <TableRow>
+                  <TableRow style={{ backgroundColor: "#434343" }}>
                     <TableCell></TableCell>
-                    <TableCell align="right">Avg. Quantity per 100g</TableCell>
+                    <TableCell style={{ color: "white" }} align="right">
+                      <strong>Avg. Quantity per 100g</strong>
+                    </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {nutrition.map((n) => (
-                    <TableRow key={n.label} align="right">
+                  {nutrition.map((n, i) => (
+                    <TableRow
+                      key={n.label}
+                      align="right"
+                      style={
+                        i % 2
+                          ? { backgroundColor: "#f7f7f7" }
+                          : { backgroundColor: "#e4e4e4" }
+                      }
+                    >
                       <TableCell>{n.label}</TableCell>
                       <TableCell align="right">
                         {(n.quantity / scale).toFixed(1)} {n.unit}

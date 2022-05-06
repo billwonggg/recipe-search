@@ -14,7 +14,7 @@ const Header = ({ search, getSearch, setSearch }) => {
         Search up ANY kind of food (e.g. miso ramen, croissant, brownie) to see
         it in action. <br />
         <br />
-        Click on a recipe to see more information. &nbsp;
+        Click on a recipe to learn more. &nbsp;
         <PulseLoader
           color={"#00539c"}
           loading={true}

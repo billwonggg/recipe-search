@@ -22,23 +22,6 @@
   align-items: center;
 }
 
-.searchButton {
-  border: none;
-  padding: 10px 20px;
-  margin-left: 3px;
-  cursor: pointer;
-  background-color: rgb(246, 195, 68);
-  color: black;
-  font-weight: 700;
-  border-radius: 5px;
-  width: 11ch;
-}
-
-.searchButton:hover {
-  background-color: rgb(235, 70, 42);
-  color: white;
-}
-
 .allRecipes {
   display: flex;
   justify-content: space-around;
