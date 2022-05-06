@@ -15,12 +15,13 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "500px",
+    maxHeight: "60%",
     maxWidth: "90%",
     bgcolor: "background.paper",
-    // border: "3px solid #000",
     borderRadius: "20px",
     boxShadow: 15,
     p: 4,
+    overflow: "scroll",
   };
 
   const handleClose = () => {
