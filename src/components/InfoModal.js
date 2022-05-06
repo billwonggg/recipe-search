@@ -17,7 +17,7 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
     width: "500px",
     maxWidth: "90%",
     bgcolor: "background.paper",
-    border: "3px solid #000",
+    // border: "3px solid #000",
     borderRadius: "20px",
     boxShadow: 15,
     p: 4,

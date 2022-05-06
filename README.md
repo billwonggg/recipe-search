@@ -1,34 +1,28 @@
-# **Recipe Search API with React.js** - [_Link here_](https://recipesearch-api.web.app)
+# **Recipe Search Tool** - [_Link here_](https://recipesearch-api.web.app)
 
-### The goal of this project is to practice React.js and asynchronous API fetching after learning the theory. <br>
+### The goal of this project is to practice React.js and API requests after learning the theory about it. <br>
 
-#### The API of this website is from edamam.com, which includes over 2.3 million recipes across the world.
-
-<br>
+#### The data from this website is from the edamam.com API, which includes over 2.3 million recipes across the world.
 
 > ### I was able to solidify my understanding with:
 >
 > - React.js Hooks (State/Effect)
 > - Asynchronous API calls (async/await)
+> - Processing data from API requests
 > - JSX (JavaScript XML)
 > - React props and components
-> - CSS and Material UI modules
+> - CSS and Material UI components
 
-<br>
+#### After building the initial website, I consistently improved the user experience by deploying regular updates. I added new features such as the ability to click on recipes to reveal further information, a scroll to top button, an improved search-bar, and many other UI and functionality improvements.
 
 ### Desktop Preview:
 
-![Demo](./images/desktop_preview.png)
+<img src="./images/desktop.png" width="750">
+
+<br>
+
+<img src="./images/desktop_modal.png" width="500">
 
 ### Mobile Preview:
 
-<img src="./images/mobile_preview.png" width="250">
-
-### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-> ### In the project directory, you can run:
->
-> - #### `npm install`
-> - #### `npm start`
-> - #### `npm test`
-> - #### `npm run build`
+<img src="./images/mobile.png" width="250">
