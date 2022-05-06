@@ -13,16 +13,16 @@
 > - React props and components
 > - CSS and Material UI components
 
-#### After building the initial website, I consistently improved the user experience by deploying regular updates. I added new features such as the ability to click on recipes to reveal further information, a scroll to top button, an improved search-bar, and many other UI and functionality improvements.
+#### After building the initial website, I consistently improved the user experience by deploying regular updates. I added new features such as the ability to click on recipes to reveal more information, a scroll to top button, an improved search-bar, and many other UI and functionality improvements.
 
 ### Desktop Preview:
 
-<img src="./images/desktop.png" width="750">
+<img src="./images/laptop.png" width="750">
 
 <br>
 
-<img src="./images/desktop_modal.png" width="500">
+<img src="./images/info.png" width="750">
 
 ### Mobile Preview:
 
-<img src="./images/mobile.png" width="250">
+<img src="./images/mob.png" width="250">
