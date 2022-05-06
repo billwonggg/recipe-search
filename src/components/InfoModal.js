@@ -102,8 +102,8 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
             style={{
               display: "block",
               position: "absolute",
-              top: "10px",
-              right: "10px",
+              top: "12px",
+              right: "12px",
             }}
             color="secondary"
             onClick={handleClose}

@@ -48,9 +48,13 @@ const App = () => {
   }, [query]);
 
   // when user presses the submit button, set the query state and clear search box
-  const getSearch = (e) => {
+  const getSearch = () => {
+    // search keyword too short
+    if (search.length <= 1) {
+      setSearch("");
+      return;
+    }
     setQuery(search);
-    setSearch("");
   };
   console.log(modalRecipe);
 
