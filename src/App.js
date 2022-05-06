@@ -47,14 +47,13 @@ const App = () => {
     recipeAPI();
   }, [query]);
 
-  // when user presses the submit button, set the query state and clear search box
+  // when user presses the submit button, clear search box and call API
   const getSearch = () => {
     // search keyword too short
-    if (search.length <= 1) {
-      setSearch("");
-      return;
+    setSearch("");
+    if (search.length > 1) {
+      setQuery(search);
     }
-    setQuery(search);
   };
   console.log(modalRecipe);
 
