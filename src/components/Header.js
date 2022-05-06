@@ -12,7 +12,9 @@ const Header = ({ search, getSearch, setSearch }) => {
         has over 2.3 million recipes across the world. <br />
         <br />
         Search up ANY kind of food (e.g. miso ramen, croissant, brownie) to see
-        it in action. &nbsp;
+        it in action. <br />
+        <br />
+        Click on a recipe to see further information. &nbsp;
         <PulseLoader
           color={"#00539c"}
           loading={true}

@@ -2,6 +2,8 @@ import React from "react";
 import { Backdrop, Box, Modal, Fade } from "@material-ui/core";
 import { Table, TableBody, TableRow, TableCell } from "@material-ui/core";
 import { TableContainer, TableHead, Paper } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
 
 const InfoModal = ({ modalRecipe, setModalRecipe }) => {
   // handle null
@@ -15,7 +17,7 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
     width: "500px",
     maxWidth: "90%",
     bgcolor: "background.paper",
-    border: "5px solid #000",
+    border: "3px solid #000",
     borderRadius: "20px",
     boxShadow: 15,
     p: 4,
@@ -96,6 +98,18 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
               </Table>
             </TableContainer>
           </Box>
+          <IconButton
+            style={{
+              display: "block",
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+            }}
+            color="secondary"
+            onClick={handleClose}
+          >
+            <CloseIcon />
+          </IconButton>
         </Box>
       </Fade>
     </Modal>
