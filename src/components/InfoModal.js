@@ -18,7 +18,7 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
     maxHeight: "70%",
     maxWidth: "90%",
     bgcolor: "background.paper",
-    borderRadius: "20px",
+    overflowX: "hidden",
     boxShadow: 15,
     p: 4,
     overflow: "scroll",
@@ -62,7 +62,7 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
       closeAfterTransition
       BackdropComponent={Backdrop}
       BackdropProps={{
-        timeout: 800,
+        timeout: 1000,
       }}
     >
       <Fade in={true}>

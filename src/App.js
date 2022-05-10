@@ -25,7 +25,7 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5500);
+    }, 4000);
   }, []);
 
   // every time the query (when user submits) changes, we call API
