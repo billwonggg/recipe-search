@@ -10,52 +10,46 @@ import ScrollUp from "./components/ScrollUp";
 
 const App = () => {
   // States
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("creamy pasta");
   const [modalRecipe, setModalRecipe] = useState(null);
 
   // use env variables for api keys
   const APP_ID = process.env.REACT_APP_API_APP_ID;
   const APP_KEY = process.env.REACT_APP_API_APP_KEY;
 
-  // Effects
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 4000);
-  }, []);
+  const recipeAPI = async (query) => {
+    try {
+      // const response = await fetch(
+      //   `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+      // );
+      // if (response.ok) {
+      //   const data = await response.json();
+      //   setRecipes(data.hits);
+      // }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  // every time the query (when user submits) changes, we call API
+  // initial search on load
   useEffect(() => {
-    // make the API call asynchronously
-    const recipeAPI = async () => {
-      try {
-        const response = await fetch(
-          `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
-        );
-        if (response.ok) {
-          const data = await response.json();
-          setRecipes(data.hits);
-        }
-      } catch (error) {
-        console.error(error);
-      }
+    const searchAPI = async (data) => {
+      await recipeAPI(data);
+      setLoading(false);
     };
-    recipeAPI(); // eslint-disable-next-line
-  }, [query]);
+    searchAPI("creamy pasta");
+  });
 
   // when user presses the submit button, clear search box and call API
-  const getSearch = () => {
+  const submit = () => {
     // search keyword too short
     setSearch("");
     if (search.length > 1) {
-      setQuery(search);
+      recipeAPI(search);
     }
   };
-  console.log(modalRecipe);
 
   // loading page
   if (loading) {
@@ -70,7 +64,7 @@ const App = () => {
       <ScrollBar />
       <ScrollUp showBelow={250} />
       <div className="title">
-        <Header search={search} getSearch={getSearch} setSearch={setSearch} />
+        <Header search={search} getSearch={submit} setSearch={setSearch} />
       </div>
       <div className="allRecipes">
         {recipes.map((r, i) => (
