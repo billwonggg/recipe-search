@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-import ScrollBar from "./components/ScrollBar";
-import Header from "./components/Header";
-import Recipe from "./components/Recipe";
-import Footer from "./components/Footer";
-import ScrollUp from "./components/ScrollUp";
 import GridLoader from "react-spinners/GridLoader";
+import "./App.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import InfoModal from "./components/InfoModal";
+import Recipe from "./components/Recipe";
+import ScrollBar from "./components/ScrollBar";
+import ScrollUp from "./components/ScrollUp";
 
 const App = () => {
   // States
@@ -44,7 +44,7 @@ const App = () => {
         console.error(error);
       }
     };
-    recipeAPI();
+    recipeAPI(); // eslint-disable-next-line
   }, [query]);
 
   // when user presses the submit button, clear search box and call API
@@ -74,11 +74,7 @@ const App = () => {
       </div>
       <div className="allRecipes">
         {recipes.map((r, i) => (
-          <Recipe
-            key={"recipe" + i}
-            recipe={r.recipe}
-            setModalRecipe={setModalRecipe}
-          />
+          <Recipe key={"recipe" + i} recipe={r.recipe} setModalRecipe={setModalRecipe} />
         ))}
       </div>
       <InfoModal modalRecipe={modalRecipe} setModalRecipe={setModalRecipe} />
