@@ -1,9 +1,19 @@
+import CloseIcon from "@mui/icons-material/Close";
+import {
+  Backdrop,
+  Box,
+  Fade,
+  IconButton,
+  Modal,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import React from "react";
-import { Backdrop, Box, Modal, Fade } from "@material-ui/core";
-import { Table, TableBody, TableRow, TableCell } from "@material-ui/core";
-import { TableContainer, TableHead, Paper } from "@material-ui/core";
-import { IconButton } from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
 
 const InfoModal = ({ modalRecipe, setModalRecipe }) => {
   // handle null
@@ -74,9 +84,7 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
             <img src={img} alt="" />
           </Box>
 
-          <Box sx={{ fontSize: 18, mt: 2, textAlign: "center" }}>
-            {capatalisedCuisine} Cuisine
-          </Box>
+          <Box sx={{ fontSize: 18, mt: 2, textAlign: "center" }}>{capatalisedCuisine} Cuisine</Box>
           <Box sx={{ fontSize: 18, mt: 2 }}>Dish Type: {capatalisedDish}</Box>
 
           <Box sx={{ fontSize: 18, mt: 2 }}>
@@ -101,11 +109,7 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
               component={Paper}
               style={{ border: "2px solid black", marginTop: "3px" }}
             >
-              <Table
-                sx={{ minWidth: 500 }}
-                size="small"
-                aria-label="a dense table"
-              >
+              <Table sx={{ minWidth: 500 }} size="small" aria-label="a dense table">
                 <TableHead>
                   <TableRow style={{ backgroundColor: "#434343" }}>
                     <TableCell></TableCell>
@@ -120,9 +124,7 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
                       key={n.label}
                       align="right"
                       style={
-                        i % 2
-                          ? { backgroundColor: "#f7f7f7" }
-                          : { backgroundColor: "#e4e4e4" }
+                        i % 2 ? { backgroundColor: "#f7f7f7" } : { backgroundColor: "#e4e4e4" }
                       }
                     >
                       <TableCell>{n.label}</TableCell>
