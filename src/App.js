@@ -28,6 +28,7 @@ const App = () => {
       //   const data = await response.json();
       //   setRecipes(data.hits);
       // }
+      console.log(query);
     } catch (error) {
       console.error(error);
     }
@@ -40,14 +41,15 @@ const App = () => {
       setLoading(false);
     };
     searchAPI("creamy pasta");
-  });
+  }, []);
+
+  console.log(search);
 
   // when user presses the submit button, clear search box and call API
   const submit = () => {
-    // search keyword too short
-    setSearch("");
-    if (search.length > 1) {
+    if (search.length > 2) {
       recipeAPI(search);
+      setSearch("");
     }
   };
 
@@ -64,7 +66,7 @@ const App = () => {
       <ScrollBar />
       <ScrollUp showBelow={250} />
       <div className="title">
-        <Header search={search} getSearch={submit} setSearch={setSearch} />
+        <Header search={search} submit={submit} setSearch={setSearch} />
       </div>
       <div className="allRecipes">
         {recipes.map((r, i) => (
