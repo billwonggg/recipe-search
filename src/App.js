@@ -42,10 +42,9 @@ const App = () => {
     recipeAPI("creamy pasta"); // eslint-disable-next-line
   }, []);
 
-  console.log(search);
-
   // when user presses the submit button, clear search box and call API
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault();
     if (search.length > 2) {
       recipeAPI(search);
       setSearch("");
