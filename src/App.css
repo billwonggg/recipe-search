@@ -25,3 +25,12 @@
   text-align: center;
   padding: 5px;
 }
+
+.footer a {
+  text-decoration: none;
+  color: #78c5ef;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
