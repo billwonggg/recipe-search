@@ -14,7 +14,6 @@ jobs:
           node-version: 16.x
       - run: npm ci
       - run: npm run build
-      - run: npm test
       - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
