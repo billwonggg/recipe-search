@@ -15,6 +15,13 @@
 
 #### After building the initial website, I consistently improved the user experience by deploying regular updates. I added new features such as the ability to click on recipes to reveal more information, a scroll to top button, an improved search-bar, and many other UI and functionality improvements.
 
+### Update - October 2022
+
+- Upgraded package versions (React 18, MUI 5.10, and more)
+- Removed some dependencies to reduce bundle sizes
+- Reworked loading UI with skeletons
+- Various bug fixes and improvements
+
 ### Desktop Preview:
 
 <img src="./images/laptop.png" width="750">
