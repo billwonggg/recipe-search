@@ -30,7 +30,6 @@ const App = () => {
         setRecipes(data.hits);
       }
       setLoading(false);
-      console.log(query);
     } catch (error) {
       console.error(error);
       setLoading(false);
