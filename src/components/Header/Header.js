@@ -1,5 +1,4 @@
 import React from "react";
-import PulseLoader from "react-spinners/PulseLoader";
 import SearchBar from "../SearchBar";
 import style from "./header.module.css";
 
@@ -14,23 +13,8 @@ const Header = ({ search, submit, setSearch }) => {
         Search up ANY kind of food (e.g. miso ramen, croissant, brownie) to see it in action. <br />
         <br />
         Click on a recipe to learn more. &nbsp;
-        <PulseLoader color={"#00539c"} loading={true} size={8} speedMultiplier={0.7} />
       </p>
       <SearchBar search={search} submit={submit} setSearch={setSearch} />
-      {/* <SearchBar
-        value={search}
-        onChange={(e) => setSearch(e)}
-        placeholder="Enter your favourite dish here"
-        onRequestSearch={(e) => getSearch(e)}
-        cancelOnEscape={true}
-        style={{
-          width: "90%",
-          maxWidth: "700px",
-          margin: "10px",
-          borderRadius: "15px",
-          padding: "3px",
-        }}
-      /> */}
     </div>
   );
 };
