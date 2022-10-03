@@ -62,7 +62,6 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
   const nutrition = elements.map((e) => {
     return modalRecipe.totalNutrients[e];
   });
-  console.log(nutrition);
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -90,8 +89,8 @@ const InfoModal = ({ modalRecipe, setModalRecipe }) => {
           <Box sx={{ fontSize: 18, mt: 2 }}>
             Top Health Labels:
             <ol style={{ fontSize: 14 }}>
-              {modalRecipe.healthLabels.slice(0, 5).map((label) => (
-                <li>{label}</li>
+              {modalRecipe.healthLabels.slice(0, 5).map((label, i) => (
+                <li key={i}>{label}</li>
               ))}
             </ol>
           </Box>
