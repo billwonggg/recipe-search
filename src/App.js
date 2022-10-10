@@ -53,7 +53,6 @@ const App = () => {
   return (
     <div className="App">
       <ScrollBar />
-      <ScrollUp showBelow={250} />
       <div className="title">
         <Header search={search} submit={submit} setSearch={setSearch} />
       </div>
@@ -67,6 +66,7 @@ const App = () => {
         )}
       </div>
       <InfoModal modalRecipe={modalRecipe} setModalRecipe={setModalRecipe} />
+      <ScrollUp showBelow={250} />
       <div className="footer">
         <Footer />
       </div>
