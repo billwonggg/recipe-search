@@ -4,7 +4,7 @@ import { useTheme } from "@mui/system";
 import React, { useEffect, useState } from "react";
 
 const ScrollUp = ({ showBelow }) => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const theme = useTheme();
 
   const styles = {
