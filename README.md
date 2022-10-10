@@ -19,6 +19,7 @@
 
 - Upgraded package versions (React 18, MUI 5.10, and more)
 - Removed some dependencies to reduce bundle sizes
+- Add continuous deployment pipeline to automatically build and deploy to Firebase
 - Reworked loading UI with skeletons
 - Various bug fixes and improvements
 
