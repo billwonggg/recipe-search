@@ -16,8 +16,8 @@ const App = () => {
   const [modalRecipe, setModalRecipe] = useState(null);
 
   // use env variables for api keys
-  const APP_ID = process.env.REACT_APP_API_APP_ID;
-  const APP_KEY = process.env.REACT_APP_API_APP_KEY;
+  const APP_ID = import.meta.env.VITE_API_APP_ID;
+  const APP_KEY = import.meta.env.VITE_API_APP_KEY;
 
   const recipeAPI = async (query) => {
     try {
@@ -60,9 +60,7 @@ const App = () => {
         {loading ? (
           <RecipeSkeleton />
         ) : (
-          recipes.map((r, i) => (
-            <Recipe key={"recipe" + i} recipe={r.recipe} setModalRecipe={setModalRecipe} />
-          ))
+          recipes.map((r, i) => <Recipe key={"recipe" + i} recipe={r.recipe} setModalRecipe={setModalRecipe} />)
         )}
       </div>
       <InfoModal modalRecipe={modalRecipe} setModalRecipe={setModalRecipe} />
